@@ -123,7 +123,35 @@ app_license = "MIT"
 # 		"used_oil_re_refining.tasks.monthly"
 # 	]
 # }
+fixtures = [
 
+	{
+        "doctype": "Custom Field",
+        "filters": [
+            [
+                "name",
+                "in",
+                (
+                    "Purchase Receipt-waste_oil_details",                    
+                    "Purchase Receipt-tickect_no",
+                    "Purchase Receipt-net_weight",
+                    "Purchase Receipt-ltr_no",
+                    "Purchase Receipt-desity_per_sg",
+                    "Purchase Receipt-astm_test_method__density",
+                    "Purchase Receipt-flash_point",
+					"Purchase Receipt-water_contant",
+					"Purchase Receipt-astm_test_method__water_contant",
+					"Purchase Receipt-qty_in_litters",
+					"Purchase Receipt-astm_test_method__flash_point",
+					"Purchase Receipt-column_break_51",					
+                    
+                ),
+            ]
+        ],
+    },
+	{ "doctype": "Client Script", "filters": [ ["name", "in", ( "Purchase Receipt-Form", )] ] },
+
+]
 # Testing
 # -------
 
