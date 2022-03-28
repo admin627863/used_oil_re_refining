@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include used_oil_re_refining *.css
+recursive-include used_oil_re_refining *.csv
+recursive-include used_oil_re_refining *.html
+recursive-include used_oil_re_refining *.ico
+recursive-include used_oil_re_refining *.js
+recursive-include used_oil_re_refining *.json
+recursive-include used_oil_re_refining *.md
+recursive-include used_oil_re_refining *.png
+recursive-include used_oil_re_refining *.py
+recursive-include used_oil_re_refining *.svg
+recursive-include used_oil_re_refining *.txt
+recursive-exclude used_oil_re_refining *.pyc
