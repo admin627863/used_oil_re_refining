@@ -4,12 +4,12 @@
   "doctype": "Client Script",
   "dt": "Purchase Receipt",
   "enabled": 1,
-  "modified": "2022-03-28 15:06:57.144795",
+  "modified": "2022-03-29 11:03:38.838346",
   "name": "Purchase Receipt-Form",
   "parent": null,
   "parentfield": null,
   "parenttype": null,
-  "script": "\nfrappe.ui.form.on('Purchase Receipt', {\n\n\tdesity_per_sg: function(frm, cdt, cdn) \n            { \n               \n                var d = locals[cdt][cdn];\n               if(d.desity_per_sg && d.net_weight)\n               {\n                    d.qty_in_litters=flt(d.net_weight/d.desity_per_sg);\n                    frm.refresh_fields();\n                }\n            } ,\n            net_weight: function(frm, cdt, cdn) \n            { \n               \n                var d = locals[cdt][cdn];\n               if(d.desity_per_sg && d.net_weight)\n               {\n                    d.qty_in_litters=flt(d.net_weight/d.desity_per_sg);\n                    frm.refresh_fields();\n                }                \n                \n            } ,\n});\n\nfrappe.ui.form.on(\"Purchase Receipt Item\", \n    { \n        \n            item_code: function(frm, cdt, cdn) \n            { \n                 var d = locals[cdt][cdn];\n                \n               \n               if(d.item_group==\"WASTE OIL\")\n               {\n                   console.log(\"sb\"+cur_frm.doc.qty_in_litters);\n                    d.qty=cur_frm.doc.qty_in_litters;\n                    frm.refresh_fields()\n                }\n            }, \n    }\n);\n",
+  "script": "\nfrappe.ui.form.on('Purchase Receipt', {\n\n\tdensity_per_sg: function(frm, cdt, cdn) \n            { \n               \n                var d = locals[cdt][cdn];\n               if(d.density_per_sg && d.net_weight)\n               {\n                    d.qty_in_litters=flt(d.net_weight/d.density_per_sg);\n                    frm.refresh_fields();\n                }\n            } ,\n            net_weight: function(frm, cdt, cdn) \n            { \n               \n                var d = locals[cdt][cdn];\n               if(d.density_per_sg && d.net_weight)\n               {\n                    d.qty_in_litters=flt(d.net_weight/d.density_per_sg);\n                    frm.refresh_fields();\n                }                \n                \n            } ,\n});\n\nfrappe.ui.form.on(\"Purchase Receipt Item\", \n    { \n        \n            item_code: function(frm, cdt, cdn) \n            { \n                 var d = locals[cdt][cdn];\n                \n               \n               if(d.item_group==\"WASTE OIL\")\n               {\n                   console.log(\"sb\"+cur_frm.doc.qty_in_litters);\n                    d.qty=cur_frm.doc.qty_in_litters;\n                    frm.refresh_fields()\n                }\n            }, \n    }\n);\n",
   "view": "Form"
  }
 ]
